@@ -304,3 +304,20 @@
 2019-12-28 14:37:21,864 INFO 2636 [egg-mongoose] instance[0] start successfully
 2019-12-28 14:37:21,866 INFO 2636 [egg-watcher:application] watcher start success
 2019-12-28 14:37:21,877 INFO 2636 [egg:core] dump config after ready, 9ms
+2019-12-28 15:59:00,821 INFO 9356 [egg:logger] init all loggers with options: {"dir":"C:\\Users\\Administrator\\Desktop\\shopping\\server\\logs\\server","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"server-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-12-28 15:59:00,880 INFO 9356 [egg-multipart] stream mode enable
+2019-12-28 15:59:01,860 INFO 9356 [egg-mongoose] connecting mongodb://127.0.0.1/shoppingMall
+2019-12-28 15:59:02,523 INFO 9356 [egg-static] starting static serve /public/ -> C:\Users\Administrator\Desktop\shopping\server\app\public
+2019-12-28 15:59:02,528 INFO 9356 [egg-security] use methodnoallow middleware
+2019-12-28 15:59:02,529 INFO 9356 [egg-security] use noopen middleware
+2019-12-28 15:59:02,530 INFO 9356 [egg-security] use nosniff middleware
+2019-12-28 15:59:02,531 INFO 9356 [egg-security] use xssProtection middleware
+2019-12-28 15:59:02,532 INFO 9356 [egg-security] use xframe middleware
+2019-12-28 15:59:02,533 INFO 9356 [egg-security] use dta middleware
+2019-12-28 15:59:02,533 INFO 9356 [egg-security] compose 6 middlewares into one security middleware
+2019-12-28 15:59:02,574 INFO 9356 [egg:core] dump config after load, 8ms
+2019-12-28 15:59:02,579 INFO 9356 [egg-mongoose] starting...
+2019-12-28 15:59:02,655 INFO 9356 [egg-watcher:application] watcher start success
+2019-12-28 15:59:02,661 INFO 9356 [egg-mongoose] mongodb://127.0.0.1/shoppingMall connected successfully
+2019-12-28 15:59:02,684 INFO 9356 [egg-mongoose] instance[0] start successfully
+2019-12-28 15:59:02,697 INFO 9356 [egg:core] dump config after ready, 11ms

@@ -5,11 +5,9 @@ import store from './store'
 import service from "./http"
 import Vant from 'vant';
 import 'vant/lib/index.css'
-import BScroll from 'better-scroll'
 import FastClick from 'fastclick'
 
 FastClick.attach(document.body);
-var BScroll = require('better-scroll')
 Vue.use(Vant);
 Vue.prototype.$axios = service
 Vue.config.productionTip = false
