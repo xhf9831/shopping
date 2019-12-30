@@ -5,8 +5,15 @@
 </template>
 
 <style lang="scss">
+@import './style/common';
+#app{
+  width: 100%;
+  height: 100%;
+}
 body{
   margin: 0;
   padding: 0;
+  background:#ECECEC;
+  margin-bottom: 13.33vw;
 }
 </style>

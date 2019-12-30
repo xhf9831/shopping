@@ -1,5 +1,5 @@
 <template>
- <div>
+ <div class="foot">
   <van-tabbar v-model="active" inactive-color="#000" active-color="red">
     <van-tabbar-item name='home' to="/home" icon="wap-home-o">商城</van-tabbar-item>
     <van-tabbar-item name='category' to="/category" icon="wap-nav">分类</van-tabbar-item>
@@ -35,5 +35,7 @@
 </script>
 
 <style scoped lang='scss'>
-
+.foot{
+  background: white;
+}
 </style>
