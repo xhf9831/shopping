@@ -19,10 +19,14 @@ const routes = [{
         }]
     },
     {
-        path: '/category',
-        name: 'category',
-        component: () =>
-            import ('../views/category/Category.vue')
+        path: '',
+        component: common,
+        children: [{
+            path: '/category',
+            name: 'category',
+            component: () =>
+                import ('../views/category/Category')
+        }]
     }
 ]
 
