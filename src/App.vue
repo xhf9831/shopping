@@ -14,6 +14,5 @@ body{
   margin: 0;
   padding: 0;
   background:#ECECEC;
-  padding-bottom: 13.33vw;
 }
 </style>

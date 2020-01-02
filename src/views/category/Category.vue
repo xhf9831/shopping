@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="all-content">
     <my-top>
       <div class="t-content" slot="mid">
         <span class="t-title">商品分类</span>
@@ -16,17 +16,21 @@
           <van-tab v-for="(item,index) in arr" :key="index" :title="item.mallSubName">
           </van-tab>
         </van-tabs>
-        <div class="r-content" v-for="(item,index) in detail" :key="index">
-          <div class="r-p-content">
-            <img class="r-p" :src="item.image" alt="">
-          </div>
-          <div class="r-t-content">
-            <div class="r-name">
-              {{item.name}}
-            </div>
-            <div class="r-price">
-              <span class="r-n-p">￥{{item.present_price}}</span>
-              <del class="r-o-p">{{item.orl_price}}</del>
+        <div class="wrapper" ref="wrapper">
+          <div class="wrap-content">
+            <div class="r-content" v-for="(item,index) in detail" :key="index">
+              <div class="r-p-content">
+                <img class="r-p" :src="item.image" alt="">
+              </div>
+              <div class="r-t-content">
+                <div class="r-name">
+                  {{item.name}}
+                </div>
+                <div class="r-price">
+                  <span class="r-n-p">￥{{item.present_price}}</span>
+                  <del class="r-o-p">{{item.orl_price}}</del>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -36,6 +40,7 @@
 </template>
 
 <script>
+import BScroll from "better-scroll";
 export default {
   data() {
     return {
@@ -54,7 +59,6 @@ export default {
       this.$api
         .recommend()
         .then(res => {
-          console.log(res);
           this.list = res.data.category;
           this.arr=res.data.category[0].bxMallSubDto
           this.defalutId = this.list[this.mallCategoryId].bxMallSubDto[this.active].mallSubId
@@ -77,6 +81,13 @@ export default {
         console.log(err);
       })
     },
+    init() {
+      this.bs = new BScroll(".wrapper", {
+        scrollY: true,
+        click: true,
+        probeType: 3 // listening scroll hook
+      });
+    }
   },
   mounted() {
     this.getText();
@@ -85,6 +96,7 @@ export default {
     }else{
       this.mallCategoryId = this.$route.query.id -1
     }
+    this.init();
   },
   watch: {},
   computed: {}
@@ -92,6 +104,13 @@ export default {
 </script>
 
 <style scoped lang='scss'>
+.wrapper{
+  overflow: hidden;
+  height: 535px;
+}
+.all-content{
+  padding-bottom: 13.33vw;
+}
 .t-content {
   line-height: 37.5px;
   .t-title {

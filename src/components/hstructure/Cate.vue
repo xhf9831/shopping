@@ -25,7 +25,6 @@
      getData(){
        this.$api.recommend().then(res=>{
          this.list = res.data.category;
-         console.log(this.list);
        }).catch(err=>{
          console.log(err);
        })

@@ -19,13 +19,39 @@ const routes = [{
         }]
     },
     {
-        path: '',
+        path: '/category',
         component: common,
         children: [{
-            path: '/category',
+            path: '',
             name: 'category',
             component: () =>
                 import ('../views/category/Category')
+        }]
+    },
+    {
+        path: '/login',
+        name: 'login',
+        component: () =>
+            import ('../views/login/Login')
+    },
+    {
+        path: '/shopcar',
+        component: common,
+        children: [{
+            path: '',
+            name: 'shopcar',
+            component: () =>
+                import ('../views/shopcar/Shopcar')
+        }]
+    },
+    {
+        path: '/mine',
+        component: common,
+        children: [{
+            path: '',
+            name: 'mine',
+            component: () =>
+                import ('../views/mine/Mine')
         }]
     }
 ]

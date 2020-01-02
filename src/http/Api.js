@@ -137,7 +137,7 @@ export default {
      * evaluateOne          查询单条评论    参数： id：商品id，_id：数据库的那条id
      */
     getAverify() {
-        return process.env.NODE_ENV === 'production' ? `/v1/verify?mt=${Math.random()}` : `/api/v1/verify?mt=${Math.random()}`
+        return service.get(`/verify`)
     },
 
     getAddress() {
@@ -168,12 +168,11 @@ export default {
         })
     },
 
-    register(nickname, password, verify, sms) {
+    register(nickname, password, verify) {
         return service.post('/register', {
             nickname,
             password,
-            verify,
-            sms
+            verify
         })
     },
 

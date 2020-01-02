@@ -3,3 +3,21 @@
         padding: 0;
     }
 }
+
+.van__it {
+    .van-cell {
+        padding: 5.667vw 4.267vw;
+    }
+}
+
+.van__bt {
+    .van-button:before {
+        margin-left: 10px;
+    }
+}
+
+.van__tag {
+    .van-tabbar--fixed {
+        position: relative;
+    }
+}
