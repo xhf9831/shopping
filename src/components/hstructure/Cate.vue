@@ -1,6 +1,6 @@
 <template>
  <div class="category">
-  <div v-for="(item,index) in list" :key="index" @click="sendIt(item.mallCategoryId)" class="detail">
+  <div v-for="(item,index) in list" :key="index" @click="sendIt(item)" class="detail">
     <img class="d-p" :src="item.image" alt="">
     <div>
       <span class="d-f">
@@ -30,7 +30,8 @@
          console.log(err);
        })
      },
-     sendIt(item){
+     sendIt(text){
+       this.$router.push({path:'/category',query:{id:text.mallCategoryId}})
      }
    },
    mounted() {

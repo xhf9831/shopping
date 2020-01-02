@@ -80,6 +80,11 @@ export default {
   },
   mounted() {
     this.getText();
+    if(!this.$route.query.id){
+      this.mamallCategoryId = this.mallCategoryId
+    }else{
+      this.mallCategoryId = this.$route.query.id -1
+    }
   },
   watch: {},
   computed: {}
