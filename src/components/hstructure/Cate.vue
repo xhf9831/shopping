@@ -55,6 +55,7 @@
   margin: 4px 10px;
   justify-content: space-around;
   .detail{
+    cursor: pointer;
     flex: 1;
     .d-p{
       width: 11vw;

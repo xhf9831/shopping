@@ -21,3 +21,15 @@
         position: relative;
     }
 }
+
+.van__bot {
+    .van-goods-action {
+        z-index: 6;
+    }
+}
+
+.van__feng {
+    .van-tab__pane {
+        display: block;
+    }
+}

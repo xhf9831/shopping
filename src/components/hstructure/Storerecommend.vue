@@ -6,7 +6,7 @@
    <div class="container">
      <div class="wrapperX" ref="wrapperX">
        <div class="content">
-         <div class="s-detail" v-for="(item,index) in list.recommend" :key="index">
+         <div class="s-detail" v-for="(item,index) in list" :key="index">
           <div class="s-p-content">
             <img class="s-p" :src="item.image" alt="">
           </div>
@@ -19,7 +19,7 @@
           </div>
           <div class="check">
             <span class="sale"><van-icon name="shopping-cart" color="white" /></span>
-            <span class="c-detail">查看详情</span>
+            <span @click="toDetail(item)" class="c-detail">查看详情</span>
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@ import BScroll from "better-scroll";
    methods: {
      getData(){
        this.$api.recommend().then(res=>{
-         this.list = res.data;
+         this.list = res.data.recommend;
        }).catch(err=>{
          console.log(err);
        })
@@ -50,9 +50,12 @@ import BScroll from "better-scroll";
      init() {
       this.bs = new BScroll(".wrapperX", {
         scrollX: true,
-        click: true,
         probeType: 3 // listening scroll hook
-      });
+      }); 
+    },
+    toDetail(item){
+      console.log(item);
+      this.$router.push({path:'/malldetail',query:{id:item.goodsId}})
     }
    },
    mounted() {

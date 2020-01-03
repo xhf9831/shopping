@@ -53,6 +53,12 @@ const routes = [{
             component: () =>
                 import ('../views/mine/Mine')
         }]
+    },
+    {
+        path: '/malldetail',
+        name: 'malldetail',
+        component: () =>
+            import ('../views/malldetail/Malldetail')
     }
 ]
 

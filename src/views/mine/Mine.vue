@@ -9,10 +9,13 @@
      <div class="photo">
        <img class="head" src="../../assets/psb.jpg" alt="">
      </div>
-     <div class="user">
-       欢迎您：{{name}}
+     <div v-if="user !== ''" class="user">
+       欢迎您：{{user.name}}
      </div>
-     <div v-if="this.$store.state.user !== ''" class="exit" @click="exit">
+     <div @click="go('/login')" v-if="user === ''" class="user">
+       登录/注册
+     </div>
+     <div v-if=" user !== ''" class="exit" @click="exit">
        退出登录
      </div>
    </div>
@@ -25,7 +28,7 @@ import mtag from '../../components/mineconstructure/Tag';
  export default {
    data () {
      return {
-      name:''
+      user:''
      }
    },
    components: {
@@ -33,12 +36,20 @@ import mtag from '../../components/mineconstructure/Tag';
    },
    methods: {
      exit(){
-       this.$store.state.user = ''
-       this.$router.push('/home')
+       localStorage.clear()
+       this.$api.loginOut().then(res=>{
+         if(res.code === 0){
+           this.$notify({type:'success',message:'退出成功'});
+         }
+       })
+       this.$router.push('/login')
+     },
+     go(text){
+       this.$router.push(text)
      }
    },
    mounted() {
-     this.name = this.$store.state.user
+     this.user = JSON.parse(localStorage.getItem("user"))
    },
    watch: {
 

@@ -18,7 +18,7 @@
         </van-tabs>
         <div class="wrapper" ref="wrapper">
           <div class="wrap-content">
-            <div class="r-content" v-for="(item,index) in detail" :key="index">
+            <div @click="toDetail(item)" class="r-content" v-for="(item,index) in detail" :key="index">
               <div class="r-p-content">
                 <img class="r-p" :src="item.image" alt="">
               </div>
@@ -87,6 +87,9 @@ export default {
         click: true,
         probeType: 3 // listening scroll hook
       });
+    },
+    toDetail(item){
+      this.$router.push({path:'/malldetail',query:{id:item.id}})
     }
   },
   mounted() {
